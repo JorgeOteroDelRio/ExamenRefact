@@ -5,6 +5,8 @@
  */
 package examencdrefact;
 
+import java.util.Scanner;
+
 /**
  *
  * @author joterodelrio
@@ -14,7 +16,7 @@ public class ExamenCDRefact {
     public static boolean esPrimo = false;
 
     public static void main(String[] args) {
-        int dig = 3;
+        int dig = introducirDigito();
         int ndig = 0;
         if (dig <= 0) {
             System.out.println("Ingrese como parámetro, un numero de digitos correcto (mayor que 0): ");
@@ -68,6 +70,12 @@ public class ExamenCDRefact {
             contador++;
         }
         return contador;
+    }
+
+    public static int introducirDigito() {
+        Scanner teclado = new Scanner(System.in);
+        System.out.println("Introduce un dígito:");
+        return teclado.nextInt();
     }
 
 }
