@@ -11,7 +11,7 @@ package examencdrefact;
  */
 public class ExamenCDRefact {
 
-    public static boolean p = false;
+    public static boolean esPrimo = false;
 
     public static void main(String[] args) {
         int dig = 3;
@@ -32,10 +32,10 @@ public class ExamenCDRefact {
 
             if (ndig == dig) {
                 if (i < 4) {
-                    p = true;
+                    esPrimo = true;
                 } else {
                     if (i % 2 == 0) {
-                        p = false;
+                        esPrimo = false;
                     } else {
                         int contador1 = 0;
                         int i1 = 1;
@@ -55,12 +55,12 @@ public class ExamenCDRefact {
                         }
 
                         if (contador1 == 1) {
-                            p = true;
+                            esPrimo = true;
                         }
                     }
                 }
 
-                if (p == true) {
+                if (esPrimo == true) {
                     System.out.println(i);
                 }
             }
