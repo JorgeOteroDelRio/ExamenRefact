@@ -21,26 +21,26 @@ public class ExamenCDRefact {
         if (dig <= 0) {
             System.out.println("Ingrese como parámetro, un numero de digitos correcto (mayor que 0): ");
         }
-        for (int i = 1; i <= 99999; i++) {
+        for (int numComparar = 1; numComparar <= 99999; numComparar++) {
 
-            ndig = contarNDigitos(i);
+            ndig = contarDivisionEntera(numComparar);
 
             if (ndig == dig) {
-                if (i < 4) {
+                if (numComparar < 4) {
                     esPrimo = true;
                 } else {
-                    if (i % 2 == 0) {
+                    if (numComparar % 2 == 0) {
                         esPrimo = false;
                     } else {
                         int contador1 = 0;
                         int i1 = 1;
-                        int k = (i - 1) / 2;
+                        int k = (numComparar - 1) / 2;
                         if (k % 2 == 0) {
                             k--;
                         }
 
                         while (i1 <= k) {
-                            if (i % i1 == 0) {
+                            if (numComparar % i1 == 0) {
                                 contador1++;
                             }
                             i1 += 2;
@@ -56,13 +56,13 @@ public class ExamenCDRefact {
                 }
 
                 if (esPrimo == true) {
-                    System.out.println(i);
+                    System.out.println(numComparar);
                 }
             }
         }
     }
 
-    public static int contarNDigitos(int i) {
+    public static int contarDivisionEntera(int i) {
         int aux = i;
         int contador = 0;
         while (aux != 0) {
