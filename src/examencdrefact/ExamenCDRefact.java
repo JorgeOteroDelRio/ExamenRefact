@@ -39,19 +39,7 @@ public class ExamenCDRefact {
                             limite--;
                         }
 
-                        while (i1 <= limite) {
-                            if (numComparar % i1 == 0) {
-                                contadorDivisores++;
-                            }
-                            i1 += 2;
-                            if (contadorDivisores == 2) {
-                                i1 = limite + 1;
-                            }
-                        }
-
-                        if (contadorDivisores == 1) {
-                            esPrimo = true;
-                        }
+                        esPrimo = calculaNumDivisores(i1, limite, numComparar, contadorDivisores);
                     }
                 }
 
@@ -78,4 +66,20 @@ public class ExamenCDRefact {
         return teclado.nextInt();
     }
 
+    public static boolean calculaNumDivisores(int i1, int limite, int numComparar, int contadorDivisores) {
+        boolean esPrimo = false;
+        while (i1 <= limite) {
+            if (numComparar % i1 == 0) {
+                contadorDivisores++;
+            }
+            i1 += 2;
+            if (contadorDivisores == 2) {
+                i1 = limite + 1;
+            }
+        }
+        if (contadorDivisores == 1) {
+            esPrimo = true;
+        }
+        return esPrimo;
+    }
 }
