@@ -32,24 +32,24 @@ public class ExamenCDRefact {
                     if (numComparar % 2 == 0) {
                         esPrimo = false;
                     } else {
-                        int contador1 = 0;
+                        int contadorDivisores = 0;
                         int i1 = 1;
-                        int k = (numComparar - 1) / 2;
-                        if (k % 2 == 0) {
-                            k--;
+                        int limite = (numComparar - 1) / 2;
+                        if (limite % 2 == 0) {
+                            limite--;
                         }
 
-                        while (i1 <= k) {
+                        while (i1 <= limite) {
                             if (numComparar % i1 == 0) {
-                                contador1++;
+                                contadorDivisores++;
                             }
                             i1 += 2;
-                            if (contador1 == 2) {
-                                i1 = k + 1;
+                            if (contadorDivisores == 2) {
+                                i1 = limite + 1;
                             }
                         }
 
-                        if (contador1 == 1) {
+                        if (contadorDivisores == 1) {
                             esPrimo = true;
                         }
                     }
