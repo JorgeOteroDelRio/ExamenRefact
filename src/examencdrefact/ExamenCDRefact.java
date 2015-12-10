@@ -20,15 +20,8 @@ public class ExamenCDRefact {
             System.out.println("Ingrese como parámetro, un numero de digitos correcto (mayor que 0): ");
         }
         for (int i = 1; i <= 99999; i++) {
-            int aux = i;
 
-            int contador = 0;
-
-            while (aux != 0) {
-                aux = aux / 10;
-                contador++;
-            }
-            ndig = contador;
+            ndig = contarNDigitos(i);
 
             if (ndig == dig) {
                 if (i < 4) {
@@ -65,6 +58,16 @@ public class ExamenCDRefact {
                 }
             }
         }
+    }
+
+    public static int contarNDigitos(int i) {
+        int aux = i;
+        int contador = 0;
+        while (aux != 0) {
+            aux = aux / 10;
+            contador++;
+        }
+        return contador;
     }
 
 }
